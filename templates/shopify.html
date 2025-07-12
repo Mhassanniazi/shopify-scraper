@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/app.css')}}">
+    <!-- Dependency: Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Dependency: Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <!-- Data Preview Modal -->
+    <div class="modal animate__animated animate__fadeInRight" id="dataPreviewModal" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Preview Products</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex">
+                        <p class="custom-badge">
+                            <span class="custom-badge-start">Site</span><span class="custom-badge-end"
+                                id="modalSite">https://www.com/</span>
+                        </p>
+                        <p class="custom-badge">
+                            <span class="custom-badge-start">Total Records</span><span class="custom-badge-end"
+                                id="modalRecords">5600</span>
+                        </p>
+                    </div>
+                    <table class="table table-striped" id="dataPreviewTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Images</th>
+                                <th>Added At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nike Shoes <i class="fa-solid fa-up-right-from-square"></i></td>
+                                <td>500.00</td>
+                                <td>nike-shoes-pk-500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Site Content -->
+    <header>
+        <div>
+            <h1>Shopify Products Scraper</h1>
+            <p>Export Shopify Product List On The Fly</p>
+        </div>
+        <img id="icon" src="{{url_for('static',filename='images/shopify-icon.png')}}" alt="" srcset="">
+    </header>
+    <div class="container d-flex justify-content-center mt-5" id="tool-container">
+        <div id="tool" class="w-50">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address <span
+                            class="required">*</span></label>
+                    <input required type="email" name="email" class="form-control" id="" placeholder="name@example.com"
+                        data-bs-toggle="tooltip" data-bs-placement="left"
+                        data-bs-title="Your email helps us recognise you" data-bs-custom-class="tooltip-bg">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Shopify Store URL <span
+                            class="required">*</span></label>
+                    <input required type="text" name="storeUrl" class="form-control" id="" placeholder="">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <button onclick="submitForm(event)" type="button" class="btn btn-custom-primary">Scrape</button>
+                    </div>
+                    <div class="d-flex gap-2 d-none" id="actionButtons">
+                        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                            data-bs-target="#dataPreviewModal">Preview</button>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Download
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">shopify</a></li>
+                                <li><a class="dropdown-item" href="#">wordpress</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- loader -->
+    <div class="loader d-none">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- youtube reference -->
+    <a href="https://youtu.be/RH4S8F8mcGU" target="_blank"><img
+            src="{{url_for('static', filename='images/youtube-icon-1.png')}}" class="youtube-icon"></a>
+
+    <!-- todo: Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script src="{{url_for('static',filename='js/app.js')}}"></script>
+</body>
+
+</html>

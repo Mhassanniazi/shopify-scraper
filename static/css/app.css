@@ -1,0 +1,123 @@
+:root {
+    --font: "Inter", sans-serif;
+    --body-color: #637381;
+    --heading-color: #212b36;
+    --primary-color: #3056d3;
+    --white: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-bottom: 2px solid #95bf47;
+    padding: 25px;
+
+    /* todo: background image */
+    background-image: url('/static/images/header-bg-01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+
+}
+
+header h1 {
+    margin-bottom: 0px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+header p {
+    text-align: center;
+    font-style: italic;
+}
+
+img#icon {
+    position: absolute;
+    top: 90px;
+    left: 10px;
+    transform: rotate(-15deg);
+}
+
+#tool {
+    border: 1px solid #171b415a;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+}
+
+body {
+    background-image: url("/static/images/dot-background.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.btn-custom-primary {
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: #171B41;
+    --bs-btn-border-color: #171B41;
+    --bs-btn-hover-color: #171B41;
+    --bs-btn-hover-bg: var(--bd-violet-bg);
+    --bs-btn-hover-border-color: #171B41;
+}
+
+.required {
+    color: red;
+}
+
+input:focus {
+    box-shadow: 0 0 0 .25rem rgba(23, 27, 65, 0.096) !important;
+    border-color: #171b4158 !important;
+}
+
+.tooltip-bg {
+    --bs-tooltip-bg: #278807;
+}
+
+.loader {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    /* z-index: 9999; */
+}
+
+.modal-fullscreen {
+    width: 40%;
+    margin-left: 60%;
+}
+
+.animate__fadeInRight {
+    --animate-duration: 0.5s;
+}
+
+/* Modal Badges */
+.custom-badge {
+    padding: 0px 3px;
+    font-size: 11px;
+}
+
+.custom-badge>span {
+    padding: 5px;
+}
+
+.custom-badge>span.custom-badge-start {
+    border-radius: 5px 0px 0px 5px;
+    background-color: var(--heading-color);
+    color: white;
+}
+
+.custom-badge>span.custom-badge-end {
+    border-radius: 0px 5px 5px 0px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.youtube-icon {
+    position: absolute;
+    right: 35px;
+}
