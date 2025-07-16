@@ -97,9 +97,15 @@
                                 Download
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">shopify</a></li>
-                                <li><a class="dropdown-item" href="#">wordpress</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item"
+                                        href="{{url_for('download', id=-1, format='shopify')}}">shopify</a></li>
+                                <li><a class="dropdown-item"
+                                        href="{{url_for('download', id=-1, format='wordpress')}}">wordpress</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="{{url_for('download', id=-1, format='csv')}}">CSV</a></li>
                             </ul>
                         </div>
                     </div>

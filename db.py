@@ -1,8 +1,10 @@
 import mysql.connector as mysql
 import os
-from dotenv import load_dotenv
+import sys
 
-load_dotenv()
+if sys.platform == "win32":
+    from dotenv import load_dotenv
+    load_dotenv()
 class DatabaseConnection():
     """`Database Connection` class"""
 
