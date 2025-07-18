@@ -76,4 +76,5 @@ def download(id: int):
         download_name=f"shopify_data_{id}.csv"
     )
 
-app.run(debug=True)
+# For Local Dev
+# app.run(debug=True)
